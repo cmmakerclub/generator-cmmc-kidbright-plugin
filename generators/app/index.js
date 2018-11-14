@@ -60,6 +60,7 @@ I'll automatically create this folder.`
 
     return this.prompt(prompts).then(answers => {
       this.props = answers
+      console.log(answers)
     })
   }
 
