@@ -1,0 +1,58 @@
+{
+  "name": "generator-cmmc-kidbright-plugin",
+  "version": "1.0.0",
+  "description": "CMMC KidBright Plugin",
+  "homepage": "cmmc.io",
+  "author": {
+    "name": "Nat Weerawan",
+    "email": "nat@cmmc.io",
+    "url": ""
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "jest": "^23.5.0",
+    "jest-cli": "^23.5.0",
+    "nsp": "^3.2.1",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "command-exists": "^1.2.2",
+    "mkdirp": "^0.5.1",
+    "underscore.string": "^3.3.4",
+    "yeoman-generator": "^3.1.1",
+    "yosay": "^2.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "nsp check",
+    "pretest": "eslint . --fix",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "env": {
+      "jest": true,
+      "node": true
+    }
+  },
+  "repository": "cmmakerclub/generator-cmmc-kidbright-plugin",
+  "license": "MIT"
+}

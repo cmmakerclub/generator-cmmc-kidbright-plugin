@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Nat",
+      "authorEmail": "nat@cmmc.io",
+      "authorUrl": ""
+    }
+  }
+}
