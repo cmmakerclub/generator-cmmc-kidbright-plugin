@@ -15,12 +15,12 @@ module.exports = class extends Generator {
     super(args, opts)
 
     // // This makes `plugin_name` argument.
-    this.argument('plugin_name', {
+    this.argument('pluginName', {
       type: String,
       required: false,
       description: 'plugin name'
     })
-    // // And you can then access it later; e.g. this.plugin_name
+    // // And you can then access it later; e.g. this.pluginName
   }
 
   initializing () {
@@ -30,8 +30,8 @@ module.exports = class extends Generator {
 
   default () {
     if (path.basename(this.destinationPath()) !== this.props.pluginName.toLowerCase()) {
-      this.log('Your generator must be inside a folder named ' + this.props.pluginName.toLowerCase() + '\n' +
-        'I\'ll automatically create this folder.'
+      this.log(`Your generator must be inside a folder named ${this.props.pluginName.toLowerCase()}
+I'll automatically create this folder.`
       )
 
       // create-directory
@@ -43,7 +43,7 @@ module.exports = class extends Generator {
 
   prompting () {
     // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the best ' + chalk.red('generator-cmmc-kidbright-plugin') + ' generator!'))
+    this.log(yosay(`Welcome to the best ${chalk.red('generator-cmmc-kidbright-plugin')} generator!`))
 
     const prompts = [{
       type: 'input',
@@ -59,9 +59,12 @@ module.exports = class extends Generator {
     }]
 
     return this.prompt(prompts).then(answers => {
-      console.log(answers)
       this.props = answers
     })
+  }
+
+  configuring () {
+    console.log('configuring is run.')
   }
 
   writing () {
@@ -81,34 +84,19 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath('NATTemplate.h'),
       this.destinationPath(`${templateOptions.className}.h`), templateOptions)
 
-    this.fs.copyTpl(this.templatePath('blocks.js'),
-      this.destinationPath('blocks.js'), templateOptions)
-
-    this.fs.copyTpl(this.templatePath('generators.js'),
-      this.destinationPath('generators.js'), templateOptions)
-
-    this.fs.copyTpl(this.templatePath('msg/en.js'),
-      this.destinationPath('msg/en.js'), templateOptions)
-
-    this.fs.copyTpl(this.templatePath('msg/th.js'),
-      this.destinationPath('msg/th.js'), templateOptions)
+    this.fs.copyTpl(this.templatePath('blocks.js'), this.destinationPath('blocks.js'), templateOptions)
+    this.fs.copyTpl(this.templatePath('generators.js'), this.destinationPath('generators.js'), templateOptions)
+    this.fs.copyTpl(this.templatePath('msg/en.js'), this.destinationPath('msg/en.js'), templateOptions)
+    this.fs.copyTpl(this.templatePath('msg/th.js'), this.destinationPath('msg/th.js'), templateOptions)
   }
 
   _writingEditorConfig () {
-    this.fs.copy(
-      this.templatePath('editorconfig'),
-      this.destinationPath('.editorconfig')
-    )
+    this.fs.copy(this.templatePath('editorconfig'), this.destinationPath('.editorconfig'))
   }
 
   _writingGit () {
-    this.fs.copy(
-      this.templatePath('gitignore'),
-      this.destinationPath('.gitignore'))
-
-    this.fs.copy(
-      this.templatePath('gitattributes'),
-      this.destinationPath('.gitattributes'))
+    this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'))
+    this.fs.copy(this.templatePath('gitattributes'), this.destinationPath('.gitattributes'))
   }
 
   end () {
