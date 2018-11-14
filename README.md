@@ -1,1 +1,1 @@
-# generator-cmmc-kidbright-plugin
+# generator-cmmc-kidbright-plugin [![Build Status](https://travis-ci.com/cmmakerclub/generator-cmmc-kidbright-plugin.svg?branch=master)](https://travis-ci.com/cmmakerclub/generator-cmmc-kidbright-plugin)
