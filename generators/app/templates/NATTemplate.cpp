@@ -46,6 +46,8 @@ bool <%= className %>::prop_write(int index, char *value) {
 }
 
 void <%= className %>::process(Driver *drv) {
+//  char* test_str = "This is a test string.\n";
+//  uart_write_bytes(UART_NUM_0, (const char*)test_str, strlen(test_str));
 }
 
 char* <%= className %>::random() {
