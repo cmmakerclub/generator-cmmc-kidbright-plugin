@@ -10,9 +10,6 @@ describe('generator-cmmc-kidbright-plugin:app', () => {
       .inDir(testPath)
       .withPrompts({ pluginName: 'NTTRandom', pluginType: 'DEVIO' })
       .on('end', done)
-    // .then((args) => {
-    //   console.log(args)
-    // })
   })
 
   it('creates files', () => {
