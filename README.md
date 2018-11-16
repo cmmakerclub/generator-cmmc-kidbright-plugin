@@ -4,5 +4,20 @@ yet another plugin creator for kidbright-ide
 
 # How to use?
 
-  $ yo cmmc-kidbright-plugin NTTMyTestPlugin
+```
+$ npm install -g yo
+```
 
+### Run the generator
+
+To install `cmmc-kidbright-plugin`  from npm, run:
+
+```
+$ npm install -g cmmc-kidbright-plugin 
+```
+
+Finally, initiate the generator:
+
+```
+$ yo cmmc-kidbright-plugin NTTMyTestPlugin
+```
