@@ -10,10 +10,10 @@ $ npm install -g yo
 
 ### Run the generator
 
-To install `cmmc-kidbright-plugin`  from npm, run:
+To install `generator-cmmc-kidbright-plugin`  from npm, run:
 
 ```
-$ npm install -g cmmc-kidbright-plugin 
+$ npm install -g generator-cmmc-kidbright-plugin 
 ```
 
 Finally, initiate the generator:
