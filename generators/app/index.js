@@ -75,20 +75,21 @@ I'll automatically create this folder.`
   }
 
   _writingConfig () {
+    let templateFileName = `NATTemplate`
     const templateOptions = {
       className: this.props.pluginName
     }
 
-    this.fs.copyTpl(this.templatePath('NATTemplate.cpp'),
+    this.fs.copyTpl(this.templatePath(`${templateFileName}.cpp`),
       this.destinationPath(`${templateOptions.className}.cpp`), templateOptions)
 
-    this.fs.copyTpl(this.templatePath('NATTemplate.h'),
+    this.fs.copyTpl(this.templatePath(`${templateFileName}.h`),
       this.destinationPath(`${templateOptions.className}.h`), templateOptions)
 
-    this.fs.copyTpl(this.templatePath('blocks.js'), this.destinationPath('blocks.js'), templateOptions)
-    this.fs.copyTpl(this.templatePath('generators.js'), this.destinationPath('generators.js'), templateOptions)
-    this.fs.copyTpl(this.templatePath('msg/en.js'), this.destinationPath('msg/en.js'), templateOptions)
-    this.fs.copyTpl(this.templatePath('msg/th.js'), this.destinationPath('msg/th.js'), templateOptions)
+    let files = ['blocks.js', 'generators.js', 'msg/en.js', 'msg/th.js']
+    files.forEach(item => {
+      this.fs.copyTpl(this.templatePath(item), this.destinationPath(item), templateOptions)
+    })
   }
 
   _writingEditorConfig () {
