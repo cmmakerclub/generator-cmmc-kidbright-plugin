@@ -3,6 +3,8 @@
 #include <math.h>
 #include "esp_system.h"
 #include "kidbright32.h"
+#include "driver/uart.h"
+#include "soc/uart_struct.h"
 #include "<%= className %>.h"
 
 
@@ -46,9 +48,11 @@ bool <%= className %>::prop_write(int index, char *value) {
 }
 
 void <%= className %>::process(Driver *drv) {
-//  char* test_str = "This is a test string.\n";
-//  uart_write_bytes(UART_NUM_0, (const char*)test_str, strlen(test_str));
+//  char buffer[64];
+//  sprintf(buffer, "%lldms\n", (esp_timer_get_time() / 1000));
+//  uart_write_bytes(UART_NUM_0, (const char*)buffer, strlen(buffer));
 }
+
 
 char* <%= className %>::random() {
     return "nat-random";
