@@ -1,19 +1,22 @@
 {
   "name": "generator-cmmc-kidbright-plugin",
-  "version": "0.0.4",
+  "version": "0.0.7",
   "description": "CMMC KidBright Plugin",
-  "homepage": "cmmc.io",
+  "homepage": "cmmakerclub.com",
   "author": {
     "name": "Nat Weerawan",
     "email": "nat@cmmc.io",
-    "url": ""
+    "url": "https://cmmakerclub.com"
   },
   "files": [
     "generators"
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
+    "kidbright",
+    "kidbright32",
+    "kidbright-plugin",
+    "cmmc",
     "yeoman-generator"
   ],
   "devDependencies": {

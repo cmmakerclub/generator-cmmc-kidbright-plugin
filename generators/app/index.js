@@ -55,7 +55,7 @@ I'll automatically create this folder.`
       type: 'list',
       name: 'pluginType',
       message: 'What plugin type do you want to create?',
-      choices: ['DEV_IO', 'DEV_I2C0', 'DEV_I2C1', 'DEV_SPI']
+      choices: [...['DEV_IO', 'DEV_I2C0', 'DEV_I2C1', 'DEV_SPI'], 'None']
     }]
 
     return this.prompt(prompts).then(answers => {
@@ -77,7 +77,8 @@ I'll automatically create this folder.`
   _writingConfig () {
     let templateFileName = `NATTemplate`
     const templateOptions = {
-      className: this.props.pluginName
+      className: this.props.pluginName,
+      classNameLowerCase: this.props.pluginName.toLowerCase()
     }
 
     this.fs.copyTpl(this.templatePath(`${templateFileName}.cpp`),
